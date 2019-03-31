@@ -1,0 +1,96 @@
+﻿<!DOCTYPE html>
+<html>
+
+<head>
+<meta charset="UTF-8">
+<link href="./test.css" rel="stylesheet" type="text/css">
+<title>アーマー換算</title>
+</head>
+
+<body>
+
+<p>
+役職ごとのアーマー換算を行います
+</p>
+
+<p>　基準　</p>
+<form name="work">
+	<p>　<input type="radio" name="q" value="r" checked> レンジャー </p>
+	<p>　<input type="radio" name="q" value="w"> ウイングダイバー </p>
+	<p>　<input type="radio" name="q" value="a"> エアレイダー </p>
+	<p>　<input type="radio" name="q" value="f"> フェンサー </p>
+</form>
+
+<p>
+	<form name="arm">
+		アーマー値：<input type="text" name="arm" />
+	</form>
+</p>
+
+<p>
+<input type="button" value="計算してみますね" onclick=branch()>
+</p>
+
+<p>
+計算結果
+</p>
+
+<form name="result">
+	<p>　レンジャー：<input type="text" name="r_result" /> </p>
+	<p>　ウイングダイバー：<input type="text" name="w_result" /> </p>
+	<p>　エアレイダー：<input type="text" name="a_result" /> </p>
+	<p>　フェンサー：<input type="text" name="f_result" /> </p>
+	<p>　これまでのアーマー取得数：<input type="text" name="arm_num" /> </p>
+</form>
+
+<script>
+
+var init=[200,150,200,250];
+var up=[0.424,0.212,0.464,0.58];
+
+function branch(){
+	var arm_num;
+	var elements=document.getElementsByName("q");
+	for(var a="",i=elements.length;i--;){
+		if(elements[i].checked){
+			var a=elements[i].value;
+			break;
+		}
+	}
+	
+	var arm=document.arm.arm.value;
+	
+	if(a=="r"){
+		arm_num=(arm-init[0])/up[0];
+	}
+	else if(a=="w"){
+		arm_num=(arm-init[1])/up[1];
+	}
+	else if(a=="a"){
+		arm_num=(arm-init[2])/up[2];
+	}
+	else{
+		arm_num=(arm-init[3])/up[3];
+	}
+	
+	document.result.r_result.value=Math.floor(init[0]+arm_num*up[0]);
+	document.result.w_result.value=Math.floor(init[1]+arm_num*up[1]);
+	document.result.a_result.value=Math.floor(init[2]+arm_num*up[2]);
+	document.result.f_result.value=Math.floor(init[3]+arm_num*up[3]);
+	document.result.arm_num.value=Math.floor(arm_num);
+	
+}	
+
+</script>
+
+<hr>
+
+<p>参考</p>
+
+<p>レンジャー：初期値200,アーマー1個あたり0.424</p>
+<p>ウイングダイバー：初期値150,アーマー1個あたり0.212</p>
+<p>エアレイダー：初期値200,アーマー1個あたり0.464</p>
+<p>フェンサー：初期値250,アーマー1個あたり0.58</p>
+
+</body>
+</html>
