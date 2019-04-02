@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+<meta charset="UTF-8">
+<title>ぷよぷよ得点計算</title>
+</head>
+
+<body bgcolor="#CCFFFF" >
+
+<h2>
+ぷよぷよ（通ルール）の得点計算を行います
+</h2>
+
+<p>
+	<form name="chain">
+		連鎖数：<input type="text" name="chain" value=1 />
+	</form>
+</p>
+
+<p>
+	<input type="button" value="反映" onclick=set()>
+</p>
+
+<p>
+	<form name="chain1">1 連鎖 ：
+		<input type="text" name="one" value=4 />
+		<input type="text" name="two" value=0 />
+		<input type="text" name="three" value=0 />
+		<input type="radio" name="1" id="11" value="1" checked> <LABEL for="11"> 1色 </LABEL>
+		<input type="radio" name="1" id="12" value="2"> <LABEL for="12"> 2色 </LABEL>
+		<input type="radio" name="1" id="13" value="3"> <LABEL for="13"> 3色 </LABEL>
+	</form>
+</p>
+
+<p>
+	<form name="chain2">2 連鎖 ：
+		<input type="text" name="one" value=0 />
+		<input type="text" name="two" value=0 />
+		<input type="text" name="three" value=0 />
+		<input type="radio" name="2" id="21" value="1" checked> <LABEL for="21"> 1色 </LABEL>
+		<input type="radio" name="2" id="22" value="2"> <LABEL for="22"> 2色 </LABEL>
+		<input type="radio" name="2" id="23" value="3"> <LABEL for="23"> 3色 </LABEL>
+	</form>
+</p>
+
+<p>
+	<form name="chain3">3 連鎖 ：
+		<input type="text" name="one" value=0 />
+		<input type="text" name="two" value=0 />
+		<input type="text" name="three" value=0 />
+		<input type="radio" name="3" id="31" value="1" checked> <LABEL for="31"> 1色 </LABEL>
+		<input type="radio" name="3" id="32" value="2"> <LABEL for="32"> 2色 </LABEL>
+		<input type="radio" name="3" id="33" value="3"> <LABEL for="33"> 3色 </LABEL>
+	</form>
+</p>
+
+<p>
+	<form name="chain4">4 連鎖 ：
+		<input type="text" name="one" value=0 />
+		<input type="text" name="two" value=0 />
+		<input type="text" name="three" value=0 />
+		<input type="radio" name="4" id="41" value="1" checked> <LABEL for="41"> 1色 </LABEL>
+		<input type="radio" name="4" id="42" value="2"> <LABEL for="42"> 2色 </LABEL>
+		<input type="radio" name="4" id="43" value="3"> <LABEL for="43"> 3色 </LABEL>
+	</form>
+</p>
+
+<p>
+	<form name="chain5">5 連鎖 ：
+		<input type="text" name="one" value=0 />
+		<input type="text" name="two" value=0 />
+		<input type="text" name="three" value=0 />
+		<input type="radio" name="5" id="51" value="1" checked> <LABEL for="51"> 1色 </LABEL>
+		<input type="radio" name="5" id="52" value="2"> <LABEL for="52"> 2色 </LABEL>
+		<input type="radio" name="5" id="53" value="3"> <LABEL for="53"> 3色 </LABEL>
+	</form>
+</p>
+
+<p>
+	<form name="chain6">6 連鎖 ：
+		<input type="text" name="one" value=0 />
+		<input type="text" name="two" value=0 />
+		<input type="text" name="three" value=0 />
+		<input type="radio" name="6" id="61" value="1" checked> <LABEL for="61"> 1色 </LABEL>
+		<input type="radio" name="6" id="62" value="2"> <LABEL for="62"> 2色 </LABEL>
+		<input type="radio" name="6" id="63" value="3"> <LABEL for="63"> 3色 </LABEL>
+	</form>
+</p>
+
+<p>
+	<form name="chain7">7 連鎖 ：
+		<input type="text" name="one" value=0 />
+		<input type="text" name="two" value=0 />
+		<input type="text" name="three" value=0 />
+		<input type="radio" name="7" id="71" value="1" checked> <LABEL for="71"> 1色 </LABEL>
+		<input type="radio" name="7" id="72" value="2"> <LABEL for="72"> 2色 </LABEL>
+		<input type="radio" name="7" id="73" value="3"> <LABEL for="73"> 3色 </LABEL>
+	</form>
+</p>
+
+<p>
+	<form name="chain8">8 連鎖 ：
+		<input type="text" name="one" value=0 />
+		<input type="text" name="two" value=0 />
+		<input type="text" name="three" value=0 />
+		<input type="radio" name="8" id="81" value="1" checked> <LABEL for="81"> 1色 </LABEL>
+		<input type="radio" name="8" id="82" value="2"> <LABEL for="82"> 2色 </LABEL>
+		<input type="radio" name="8" id="83" value="3"> <LABEL for="83"> 3色 </LABEL>
+	</form>
+</p>
+
+<p>
+	<form name="chain9">9 連鎖 ：
+		<input type="text" name="one" value=0 />
+		<input type="text" name="two" value=0 />
+		<input type="text" name="three" value=0 />
+		<input type="radio" name="9" id="91" value="1" checked> <LABEL for="91"> 1色 </LABEL>
+		<input type="radio" name="9" id="92" value="2"> <LABEL for="92"> 2色 </LABEL>
+		<input type="radio" name="9" id="93" value="3"> <LABEL for="93"> 3色 </LABEL>
+	</form>
+</p>
+
+<p>
+	<form name="chain10">10連鎖：
+		<input type="text" name="one" value=0 />
+		<input type="text" name="two" value=0 />
+		<input type="text" name="three" value=0 />
+		<input type="radio" name="10" id="101" value="1" checked> <LABEL for="101"> 1色 </LABEL>
+		<input type="radio" name="10" id="102" value="2"> <LABEL for="102"> 2色 </LABEL>
+		<input type="radio" name="10" id="103" value="3"> <LABEL for="103"> 3色 </LABEL>
+	</form>
+</p>
+
+<p>
+	<form name="chain11">11連鎖：
+		<input type="text" name="one" value=0 />
+		<input type="text" name="two" value=0 />
+		<input type="text" name="three" value=0 />
+		<input type="radio" name="11" id="111" value="1" checked> <LABEL for="111"> 1色 </LABEL>
+		<input type="radio" name="11" id="112" value="2"> <LABEL for="112"> 2色 </LABEL>
+		<input type="radio" name="11" id="113" value="3"> <LABEL for="113"> 3色 </LABEL>
+	</form>
+</p>
+
+<p>
+	<form name="chain12">12連鎖：
+		<input type="text" name="one" value=0 />
+		<input type="text" name="two" value=0 />
+		<input type="text" name="three" value=0 />
+		<input type="radio" name="12" id="121" value="1" checked> <LABEL for="121"> 1色 </LABEL>
+		<input type="radio" name="12" id="122" value="2"> <LABEL for="122"> 2色 </LABEL>
+		<input type="radio" name="12" id="123" value="3"> <LABEL for="123"> 3色 </LABEL>
+	</form>
+</p>
+
+<p>
+	<form name="chain13">13連鎖：
+		<input type="text" name="one" value=0 />
+		<input type="text" name="two" value=0 />
+		<input type="text" name="three" value=0 />
+		<input type="radio" name="13" id="131" value="1" checked> <LABEL for="131"> 1色 </LABEL>
+		<input type="radio" name="13" id="132" value="2"> <LABEL for="132"> 2色 </LABEL>
+		<input type="radio" name="13" id="133" value="3"> <LABEL for="133"> 3色 </LABEL>
+	</form>
+</p>
+
+<p>
+	<input type="button" value="得点計算してみますね" onclick=calc_score()>
+</p>
+
+<p>
+	<form name="ans">
+		スコア：<input type="text" name="ans" />
+		お邪魔ぷよの個数：<input type="text" name="ozyama" />
+	</form>
+</p>
+
+ <script type="text/javascript" src="calc.js"></script>
+
+</body>
+</html>
