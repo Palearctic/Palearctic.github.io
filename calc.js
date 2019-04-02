@@ -44,6 +44,11 @@ function calc_score(){
 	document.ans.ozyama.value=Math.floor(ans/ozyama_rate);
 }
 
+
+/* 以下は使うか未定 */
+
+/*
+
 function sin(i){
 	eval("document.chain"+String(i)+".one.value=4");
 	eval("document.chain"+String(i)+".two.value=0");
@@ -62,3 +67,5 @@ function tri(i){
 	eval("document.chain"+String(i)+".two.value=4");
 	eval("document.chain"+String(i)+".three.value=4");
 }
+
+*/
