@@ -1,6 +1,6 @@
 /*同消しはトリプルまでしか対応していません*/
 
-var max_chain=13;
+var max_chain=19;
 var ozyama_rate=70;
 var chain_bonus_list=[0,0,8,16,32,64,96,128,160,192,224,256,288,320,352,384,416,448,480,512];
 var connect_bonus_list=[0,0,0,0,0,2,3,4,5,6,7,10];
@@ -42,4 +42,23 @@ function calc_score(){
 	}
 	document.ans.ans.value=ans;
 	document.ans.ozyama.value=Math.floor(ans/ozyama_rate);
+}
+
+function sin(i){
+	eval("document.chain"+String(i)+".one.value=4");
+	eval("document.chain"+String(i)+".two.value=0");
+	eval("document.chain"+String(i)+".three.value=0");
+}
+
+
+function dou(i){
+	eval("document.chain"+String(i)+".one.value=4");
+	eval("document.chain"+String(i)+".two.value=4");
+	eval("document.chain"+String(i)+".three.value=0");
+}
+
+function tri(i){
+	eval("document.chain"+String(i)+".one.value=4");
+	eval("document.chain"+String(i)+".two.value=4");
+	eval("document.chain"+String(i)+".three.value=4");
 }
