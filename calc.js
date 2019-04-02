@@ -37,7 +37,7 @@ function calc_score(){
 		dou=parseInt(eval("document.chain"+p+".two.value"));
 		tri=parseInt(eval("document.chain"+p+".three.value"));
 		vanish_puyo=sin+dou+tri;
-		connect_bonus=connect_bonus_list[sin]+connect_bonus_list[dou]+connect_bonus_list[tri];
+		connect_bonus=connect_bonus_list[Math.min(sin,11)]+connect_bonus_list[Math.min(dou,11)]+connect_bonus_list[Math.min(tri,11)];
 		ans+=vanish_puyo*Math.max(1,chain_bonus_list[i]+connect_bonus+color_bonus_list[color])*10;
 	}
 	document.ans.ans.value=ans;
