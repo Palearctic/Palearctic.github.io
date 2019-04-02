@@ -1,6 +1,7 @@
 /*同消しはトリプルまでしか対応していません*/
 
 var max_chain=13;
+var ozyama_rate=70;
 var chain_bonus_list=[0,0,8,16,32,64,96,128,160,192,224,256,288,320,352,384,416,448,480,512];
 var connect_bonus_list=[0,0,0,0,0,2,3,4,5,6,7,10];
 var color_bonus_list=[0,0,3,6];
@@ -40,5 +41,5 @@ function calc_score(){
 		ans+=vanish_puyo*Math.max(1,chain_bonus_list[i]+connect_bonus+color_bonus_list[color])*10;
 	}
 	document.ans.ans.value=ans;
-	document.ans.ozyama.value=Math.floor(ans/70);
+	document.ans.ozyama.value=Math.floor(ans/ozyama_rate);
 }
